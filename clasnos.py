@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 import os, sh, time
-import conf, utils
+import conf
+import cutils as utils
+
 from utiltools import shellutils
 
 

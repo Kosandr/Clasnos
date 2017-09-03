@@ -2,7 +2,9 @@
 
 import sh
 
-import conf, cutils
+import conf
+import cutils as utils
+
 from flask import Flask, request
 from utiltools import shellutils
 

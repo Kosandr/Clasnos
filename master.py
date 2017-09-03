@@ -1,6 +1,7 @@
 
 import requests
-import conf, cutils
+import conf
+import cutils as utils
 from utiltools import shellutils
 
 
