@@ -1,4 +1,4 @@
-import json, re
+import json, re, sh
 
 from utiltools import shellutils
 
@@ -17,16 +17,24 @@ c = {
 }
 
 
+@shellutils.expandhome1
+def get_path(x):
+   return x
 
-CONFIG_DIR = c['config_dir']
-if not shellutils.file_exists(CONFIG_DIR):
-   shellutils.mkdir(CONFIG_DIR)
+CONFIG_DIR = get_path(c['config_dir']) + '/'
+SCRIPTS_PATH = CONFIG_DIR + 'scripts/'
 
+if not shellutils.file_exists(SCRIPTS_PATH):
+   print('making scripts path!', SCRIPTS_PATH)
+   sh.mkdir('-p', SCRIPTS_PATH)
+
+
+###Errors
 
 ERR_DEFAULT = 0
 ERR_BAD_PASS = 1
-ERR_BAD_REQUEST = 1
-
+ERR_BAD_REQUEST = 2
+ERR_EXCEPTION = 3
 
 def mk_err(status, msg_str=''):
    return json.dumps({
@@ -44,5 +52,7 @@ def mk_succ(ret):
 
 def is_err(x):
    return x.get('is_err', True)
+
+###End Errors
 
 
