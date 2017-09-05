@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo pip3 install gunicorn
+sudo pip3 install gunicorn Flask
 
