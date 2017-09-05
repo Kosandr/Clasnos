@@ -3,8 +3,10 @@ import json, re, sh
 from utiltools import shellutils
 
 
-file_data = shellutils.read_file('conf.json')
-file_data = re.sub('[\n\t]', '', file_data)
+file_data = shellutils.read_file('~/orgs/Kosandr/Clasnos/conf.json')
+
+#file_data = shellutils.read_file('conf.json')
+file_data = re.sub(r'[\n\t]', '', file_data)
 file_conf = json.loads(file_data)
 
 c = {

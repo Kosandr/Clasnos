@@ -123,7 +123,7 @@ def wget(url, args=None):
 
 
 def rsync(src_user, src_ip, src_dir, dst_dir):
-   src_full = '%s@%s:%s' % (src_user, src_ip, src_path)
+   src_full = '%s@%s:%s' % (src_user, src_ip, src_dir)
 
    sh.rsync('-azP', src_full, dst_dir)
 
