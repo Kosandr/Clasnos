@@ -66,6 +66,7 @@ def queue_script(script_name, url, storage_path, new_name):
 def add_key(key):
    keys_path = '/root/.ssh/authorized_keys'
    if not shu.file_exists(keys_path):
+      sh.mkdir('-p', '/root/.ssh')
       sh.touch(keys_path)
 
    auth_keys = str(sh.cat('/root/.ssh/authorized_keys'))
