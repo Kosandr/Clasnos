@@ -14,8 +14,8 @@ q.l.unlock()
 
 #QUEUE_NORMAL_SLEEP = 0.1
 #QUEUE_EMPTY_SLEEP = 2
-QUEUE_EMPTY_SLEEP = 4
-QUEUE_NORMAL_SLEEP = 0.8
+QUEUE_EMPTY_SLEEP = 0.3 #4
+QUEUE_NORMAL_SLEEP = 0.3
 
 def queue_processor():
    while True:

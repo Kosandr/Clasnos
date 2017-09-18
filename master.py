@@ -161,6 +161,9 @@ class Worker:
    #returns slave index with least tasks
    def get_slave_min_tasks(self):
       min_tasks = 1000000000
+
+      all_min_indices = []
+
       curr_slave_index = None
 
       for slave_ip in self.good_slave_ips:
@@ -173,8 +176,19 @@ class Worker:
          if ret < min_tasks:
             min_tasks = ret
             curr_slave_index = slave_index
+            all_min_indices = [slave_index]
 
-      return curr_slave_index
+
+         if ret == min_tasks:
+            all_min_indices.append(slave_index)
+
+      import random
+
+      print('min_tasks:', min_tasks)
+      i = random.randint(0, len(all_min_indices) - 1)
+      return all_min_indices[i]
+
+      #return curr_slave_index
 
 #END class Worker
 
