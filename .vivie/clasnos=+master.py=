@@ -121,14 +121,14 @@ silent! normal! zE
 124,128fold
 137,139fold
 141,159fold
-162,177fold
-135,179fold
+162,191fold
+135,193fold
 135
 normal! zo
 137
 normal! zo
-141
-normal! zo
+135
+normal! zc
 let s:l = 1 - ((0 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
